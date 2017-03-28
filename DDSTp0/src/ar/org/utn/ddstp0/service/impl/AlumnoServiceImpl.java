@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import ar.org.utn.ddstp0.service.AlumnoService;
 import ar.org.utn.ddstp0.ws.dto.Alumno;
-import ar.org.utn.ddstp0.ws.dto.Materia;
+import ar.org.utn.ddstp0.ws.dto.Assignment;
 
 public class AlumnoServiceImpl implements AlumnoService {
 
@@ -22,7 +22,7 @@ public class AlumnoServiceImpl implements AlumnoService {
   }
 
   @Override
-  public ArrayList<Materia> consultaMaterias(String token) {
+  public ArrayList<Assignment> consultaMaterias(String token) {
     // TODO: Se llama a AlumnoRestWSClientImpl.consultaMaterias(token) y se devuelve este valor
     return null;
   }

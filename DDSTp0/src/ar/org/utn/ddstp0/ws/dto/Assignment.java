@@ -2,7 +2,7 @@ package ar.org.utn.ddstp0.ws.dto;
 
 import java.util.ArrayList;
 
-public class Materia {
+public class Assignment {
 
   private String title;
   private String description;

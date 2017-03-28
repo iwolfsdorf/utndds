@@ -3,7 +3,7 @@ package ar.org.utn.ddstp0.service;
 import java.util.ArrayList;
 
 import ar.org.utn.ddstp0.ws.dto.Alumno;
-import ar.org.utn.ddstp0.ws.dto.Materia;
+import ar.org.utn.ddstp0.ws.dto.Assignment;
 
 public interface AlumnoService {
 
@@ -11,6 +11,6 @@ public interface AlumnoService {
 
   public Alumno consultaDatos(String token);
 
-  public ArrayList<Materia> consultaMaterias(String token);
+  public ArrayList<Assignment> consultaMaterias(String token);
 
 }

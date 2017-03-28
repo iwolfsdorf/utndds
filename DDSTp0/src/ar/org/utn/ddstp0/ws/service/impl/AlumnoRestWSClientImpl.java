@@ -3,7 +3,7 @@ package ar.org.utn.ddstp0.ws.service.impl;
 import java.util.ArrayList;
 
 import ar.org.utn.ddstp0.ws.dto.Alumno;
-import ar.org.utn.ddstp0.ws.dto.Materia;
+import ar.org.utn.ddstp0.ws.dto.Assignment;
 import ar.org.utn.ddstp0.ws.service.AlumnoRestWSClient;
 
 public class AlumnoRestWSClientImpl implements AlumnoRestWSClient {
@@ -21,7 +21,7 @@ public class AlumnoRestWSClientImpl implements AlumnoRestWSClient {
   }
 
   @Override
-  public ArrayList<Materia> consultaMaterias(String token) {
+  public ArrayList<Assignment> consultaMaterias(String token) {
     // TODO: Se hace llamado al WS (GET http://notitas.herokuapp.com/student/assignments)
     return null;
   }
