@@ -1,5 +1,10 @@
 package ar.org.utn.ddstp0.ws.dto;
 
+import org.uqbar.commons.utils.Observable;
+import org.uqbar.commons.utils.Transactional;
+
+@Transactional
+@Observable
 public class Alumno {
 
   private int code;
@@ -39,4 +44,15 @@ public class Alumno {
     this.github_user = github_user;
   }
 
+  @Override
+  public String toString() {
+
+    StringBuilder stringBuilder = new StringBuilder();
+    stringBuilder.append("Code : " + this.code + '\n');
+    stringBuilder.append("First_name : " + this.first_name + '\n');
+    stringBuilder.append("Last_name : " + this.last_name + '\n');
+    stringBuilder.append("Github_user : " + this.github_user + '\n');
+
+    return stringBuilder.toString();
+  }
 }

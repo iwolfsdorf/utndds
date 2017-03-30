@@ -1,16 +1,14 @@
 package ar.org.utn.ddstp0.ws.service;
 
-import java.util.ArrayList;
-
 import ar.org.utn.ddstp0.ws.dto.Alumno;
-import ar.org.utn.ddstp0.ws.dto.Assignment;
+import ar.org.utn.ddstp0.ws.dto.Materias;
 
 public interface AlumnoRestWSClient {
 
-  public void actualizarDatos(Alumno alumno);
+  public int actualizarDatos(String token, Alumno alumno);
 
   public Alumno consultaDatos(String token);
 
-  public ArrayList<Assignment> consultaMaterias(String token);
+  public Materias consultaMaterias(String token);
 
 }

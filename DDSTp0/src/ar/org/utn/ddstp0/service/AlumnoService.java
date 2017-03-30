@@ -1,16 +1,13 @@
 package ar.org.utn.ddstp0.service;
 
-import java.util.ArrayList;
-
 import ar.org.utn.ddstp0.ws.dto.Alumno;
-import ar.org.utn.ddstp0.ws.dto.Assignment;
 
 public interface AlumnoService {
 
-  public void actualizarDatos(Alumno alumno);
+  public String actualizarDatos();
 
-  public Alumno consultaDatos(String token);
+  public Alumno consultaDatos();
 
-  public ArrayList<Assignment> consultaMaterias(String token);
+  public String consultaMaterias();
 
 }

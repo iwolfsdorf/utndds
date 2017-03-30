@@ -1,30 +1,87 @@
 package ar.org.utn.ddstp0.service.impl;
 
-import java.util.ArrayList;
+import org.uqbar.commons.utils.ApplicationContext;
+import org.uqbar.commons.utils.Observable;
 
-import ar.org.utn.ddstp0.service.AlumnoService;
 import ar.org.utn.ddstp0.ws.dto.Alumno;
-import ar.org.utn.ddstp0.ws.dto.Assignment;
+import ar.org.utn.ddstp0.service.AlumnoService;
+import ar.org.utn.ddstp0.ws.service.impl.AlumnoRestWSClientImpl;
 
-public class AlumnoServiceImpl implements AlumnoService {
+@Observable
+public class AlumnoServiceImpl implements AlumnoService{
 
-  @Override
-  public void actualizarDatos(Alumno alumno) {
-    // TODO: Se llama a AlumnoRestWSClientImpl.actualizarDatos(alumno)
+  private String token;
+  private Alumno resultadoAlumno;
+  private String resultadoMaterias;
 
+  private String github_user;
+  private String resultadoActualizacion;
+
+  public String actualizarDatos() {
+    Alumno alumno = getWSService().consultaDatos(this.token);
+    alumno.setGithub_user(this.github_user);
+    int estado = getWSService().actualizarDatos(this.token, alumno);
+
+    if (estado == 201)
+      resultadoActualizacion = "Actualizacion correcta.";
+    else
+      resultadoActualizacion = "Hubo un problema al actualizar.";
+    
+    return resultadoActualizacion;
   }
 
-
-  @Override
-  public Alumno consultaDatos(String token) {
-    // TODO: Se llama a AlumnoRestWSClientImpl.consultaDatos(token) y se devuelve este valor
-    return null;
+  public Alumno consultaDatos() {
+    // Se llama a AlumnoRestWSClientImpl.consultaDatos(token)
+    resultadoAlumno = getWSService().consultaDatos(this.token);
+    return resultadoAlumno;
   }
 
-  @Override
-  public ArrayList<Assignment> consultaMaterias(String token) {
-    // TODO: Se llama a AlumnoRestWSClientImpl.consultaMaterias(token) y se devuelve este valor
-    return null;
+  public String consultaMaterias() {
+    resultadoMaterias = getWSService().consultaMaterias(this.token).toString();
+    return resultadoMaterias;
   }
 
+  public String getToken() {
+    return token;
+  }
+
+  public void setToken(String token) {
+    this.token = token;
+  }
+
+  public Alumno getResultadoAlumno() {
+    return resultadoAlumno;
+  }
+
+  public void setResultadoAlumno(Alumno resultadoAlumno) {
+    this.resultadoAlumno = resultadoAlumno;
+  }
+
+  public String getResultadoMaterias() {
+    return resultadoMaterias;
+  }
+
+  public void setResultadoMaterias(String resultadoMaterias) {
+    this.resultadoMaterias = resultadoMaterias;
+  }
+
+  public String getGithub_user() {
+    return github_user;
+  }
+
+  public void setGithub_user(String github_user) {
+    this.github_user = github_user;
+  }
+
+  public String getResultadoActualizacion() {
+    return resultadoActualizacion;
+  }
+
+  public void setResultadoActualizacion(String resultadoActualizacion) {
+    this.resultadoActualizacion = resultadoActualizacion;
+  }
+
+  public AlumnoRestWSClientImpl getWSService() {
+    return ApplicationContext.getInstance().getSingleton(AlumnoRestWSClientImpl.class);
+  }
 }

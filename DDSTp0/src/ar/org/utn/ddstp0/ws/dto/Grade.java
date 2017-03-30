@@ -4,9 +4,18 @@ import java.util.Date;
 
 public class Grade {
 
+  private int id;
   private String value;
   private Date created_at;
   private Date updated_at;
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
 
   public String getValue() {
     return value;

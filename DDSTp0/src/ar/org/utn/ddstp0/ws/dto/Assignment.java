@@ -1,12 +1,19 @@
 package ar.org.utn.ddstp0.ws.dto;
 
-import java.util.ArrayList;
-
 public class Assignment {
 
+  private int id;
   private String title;
   private String description;
-  private ArrayList<Grade> grades;
+  private Grade[] grades;
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
 
   public String getTitle() {
     return title;
@@ -24,11 +31,11 @@ public class Assignment {
     this.description = description;
   }
 
-  public ArrayList<Grade> getGrades() {
+  public Grade[] getGrades() {
     return grades;
   }
 
-  public void setGrades(ArrayList<Grade> grades) {
+  public void setGrades(Grade[] grades) {
     this.grades = grades;
   }
 }
