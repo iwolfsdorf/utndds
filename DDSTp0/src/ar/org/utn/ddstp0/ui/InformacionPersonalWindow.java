@@ -25,12 +25,12 @@ public class InformacionPersonalWindow extends SimpleWindow<AlumnoServiceImpl> {
   protected void addActions(Panel actionsPanel) {
     new Button(actionsPanel).setCaption("Datos Personales").onClick(getModelObject()::consultaDatos)
         .setAsDefault().disableOnError();
-    
-    new Button(actionsPanel).setCaption("Datos Materias").onClick(getModelObject()::consultaMaterias)
-    .setAsDefault().disableOnError();
-    
-    new Button(actionsPanel).setCaption("Actualizar Datos").onClick(getModelObject()::actualizarDatos)
-    .setAsDefault().disableOnError();
+
+    new Button(actionsPanel).setCaption("Datos Materias")
+        .onClick(getModelObject()::consultaMaterias).setAsDefault().disableOnError();
+
+    new Button(actionsPanel).setCaption("Actualizar Datos")
+        .onClick(getModelObject()::actualizarDatos).setAsDefault().disableOnError();
   }
 
   @Override
@@ -40,7 +40,7 @@ public class InformacionPersonalWindow extends SimpleWindow<AlumnoServiceImpl> {
 
     new Label(searchFormPanel).setText("Token").setForeground(Color.BLUE);
     new TextBox(searchFormPanel).setWidth(150).bindValueToProperty("token");
-    
+
     new Label(searchFormPanel).setText("Nuevo usario GitHub").setForeground(Color.BLUE);
     new TextBox(searchFormPanel).setWidth(150).bindValueToProperty("github_user");
   }
@@ -51,13 +51,13 @@ public class InformacionPersonalWindow extends SimpleWindow<AlumnoServiceImpl> {
     this.setTaskDescription("Ingrese un token y si quiere un usuario de GitHub para actualizar.");
 
     super.createMainTemplate(mainPanel);
-    
+
     Label actualizacion = new Label(mainPanel);
     actualizacion.setForeground(Color.BLUE).bindValueToProperty("resultadoActualizacion");
 
     Label alumno = new Label(mainPanel);
     alumno.setForeground(Color.BLUE).bindValueToProperty("resultadoAlumno");
-    
+
     Label materias = new Label(mainPanel);
     materias.setForeground(Color.BLUE).bindValueToProperty("resultadoMaterias");
   }

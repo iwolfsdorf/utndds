@@ -3,12 +3,12 @@ package ar.org.utn.ddstp0.service.impl;
 import org.uqbar.commons.utils.ApplicationContext;
 import org.uqbar.commons.utils.Observable;
 
-import ar.org.utn.ddstp0.ws.dto.Alumno;
 import ar.org.utn.ddstp0.service.AlumnoService;
+import ar.org.utn.ddstp0.ws.dto.Alumno;
 import ar.org.utn.ddstp0.ws.service.impl.AlumnoRestWSClientImpl;
 
 @Observable
-public class AlumnoServiceImpl implements AlumnoService{
+public class AlumnoServiceImpl implements AlumnoService {
 
   private String token;
   private Alumno resultadoAlumno;
@@ -26,7 +26,7 @@ public class AlumnoServiceImpl implements AlumnoService{
       resultadoActualizacion = "Actualizacion correcta.";
     else
       resultadoActualizacion = "Hubo un problema al actualizar.";
-    
+
     return resultadoActualizacion;
   }
 
