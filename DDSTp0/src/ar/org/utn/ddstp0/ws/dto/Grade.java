@@ -2,6 +2,8 @@ package ar.org.utn.ddstp0.ws.dto;
 
 import java.util.Date;
 
+import org.uqbar.commons.utils.Observable;
+@Observable
 public class Grade {
 
   private int id;

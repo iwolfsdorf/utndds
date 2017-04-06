@@ -15,11 +15,6 @@ public class LectorDeNotasApplication extends Application {
 
   @Override
   protected Window<?> createMainWindow() {
-    System.setProperty("http.proxyHost", "proxy.hq.colegio-escribanos.org.ar");
-    System.setProperty("http.proxyPort", "8080");
-    System.setProperty("https.proxyHost", "proxy.hq.colegio-escribanos.org.ar");
-    System.setProperty("https.proxyPort", "8080");
-
     ApplicationContext.getInstance().configureSingleton(AlumnoRestWSClientImpl.class,
         new AlumnoRestWSClientImpl());
     return new InformacionPersonalWindow(this);

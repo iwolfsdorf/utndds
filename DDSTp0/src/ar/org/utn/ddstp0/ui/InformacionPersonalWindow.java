@@ -5,6 +5,7 @@ import org.uqbar.arena.widgets.Button;
 import org.uqbar.arena.widgets.Label;
 import org.uqbar.arena.widgets.Panel;
 import org.uqbar.arena.widgets.TextBox;
+import org.uqbar.arena.widgets.tables.*;
 import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
 
@@ -23,8 +24,8 @@ public class InformacionPersonalWindow extends SimpleWindow<AlumnoServiceImpl> {
 
   @Override
   protected void addActions(Panel actionsPanel) {
-    new Button(actionsPanel).setCaption("Datos Personales").onClick(getModelObject()::consultaDatos)
-        .setAsDefault().disableOnError();
+    new Button(actionsPanel).setCaption("Datos Personales")
+    	.onClick(getModelObject()::consultaDatos).setAsDefault().disableOnError();
 
     new Button(actionsPanel).setCaption("Datos Materias")
         .onClick(getModelObject()::consultaMaterias).setAsDefault().disableOnError();
@@ -55,11 +56,11 @@ public class InformacionPersonalWindow extends SimpleWindow<AlumnoServiceImpl> {
     Label actualizacion = new Label(mainPanel);
     actualizacion.setForeground(Color.BLUE).bindValueToProperty("resultadoActualizacion");
 
-    Label alumno = new Label(mainPanel);
-    alumno.setForeground(Color.BLUE).bindValueToProperty("resultadoAlumno");
-
     Label materias = new Label(mainPanel);
     materias.setForeground(Color.BLUE).bindValueToProperty("resultadoMaterias");
+    
+    Label alumno = new Label(mainPanel);
+    alumno.setForeground(Color.ORANGE).bindValueToProperty("resultadoAlumno");
   }
-
+  
 }

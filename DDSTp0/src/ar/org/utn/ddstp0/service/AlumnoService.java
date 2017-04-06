@@ -1,6 +1,7 @@
 package ar.org.utn.ddstp0.service;
 
 import ar.org.utn.ddstp0.ws.dto.Alumno;
+import ar.org.utn.ddstp0.ws.dto.Materias;
 
 public interface AlumnoService {
 
@@ -8,6 +9,6 @@ public interface AlumnoService {
 
   public Alumno consultaDatos();
 
-  public String consultaMaterias();
+  public Materias consultaMaterias();
 
 }

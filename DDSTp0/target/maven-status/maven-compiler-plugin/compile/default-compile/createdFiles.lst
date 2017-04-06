@@ -1,0 +1,12 @@
+ar\org\utn\ddstp0\service\AlumnoService.class
+ar\org\utn\ddstp0\exception\ServiceException.class
+ar\org\utn\ddstp0\ws\dto\Materias.class
+ar\org\utn\ddstp0\ws\dto\Grade.class
+ar\org\utn\ddstp0\ui\runnable\LectorDeNotasApplication.class
+ar\org\utn\ddstp0\ws\dto\Assignment.class
+ar\org\utn\ddstp0\ws\dto\Alumno.class
+ar\org\utn\ddstp0\utils\RestWSClientConstants.class
+ar\org\utn\ddstp0\ws\service\impl\AlumnoRestWSClientImpl.class
+ar\org\utn\ddstp0\service\impl\AlumnoServiceImpl.class
+ar\org\utn\ddstp0\ui\InformacionPersonalWindow.class
+ar\org\utn\ddstp0\ws\service\AlumnoRestWSClient.class

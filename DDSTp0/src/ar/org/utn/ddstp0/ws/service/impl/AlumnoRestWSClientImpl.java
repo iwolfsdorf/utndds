@@ -30,18 +30,12 @@ public class AlumnoRestWSClientImpl implements AlumnoRestWSClient {
     HttpHeaders headers = new HttpHeaders();
     headers.add("Authorization", RestWSClientConstants.AUTHORIZATION_KEY + token);
     headers.setContentType(MediaType.APPLICATION_JSON);
-
-    // MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
-    // map.add("code", String.valueOf(alumno.getCode()));
-    // map.add("first_name", alumno.getFirst_name());
-    // map.add("last_name", alumno.getLast_name());
-    // map.add("github_user", alumno.getGithub_user());
-
     HttpEntity<Alumno> request = new HttpEntity<Alumno>(alumno, headers);
-
     ResponseEntity<Alumno> response = getRestTemplate().exchange(
         RestWSClientConstants.API_HEROKUAPP + RestWSClientConstants.RESOURCE_ALUMNO, HttpMethod.PUT,
         request, Alumno.class);
+    
+    
     return response.getStatusCode().value();
   }
 
@@ -54,7 +48,7 @@ public class AlumnoRestWSClientImpl implements AlumnoRestWSClient {
     ResponseEntity<Alumno> response = getRestTemplate().exchange(
         RestWSClientConstants.API_HEROKUAPP + RestWSClientConstants.RESOURCE_ALUMNO, HttpMethod.GET,
         request, Alumno.class);
-
+    
     return response.getBody();
   }
 
@@ -63,11 +57,12 @@ public class AlumnoRestWSClientImpl implements AlumnoRestWSClient {
     // Se hace llamado al WS (GET http://notitas.herokuapp.com/student/assignments)
     HttpHeaders headers = new HttpHeaders();
     headers.add("Authorization", RestWSClientConstants.AUTHORIZATION_KEY + token);
-    HttpEntity<String> request = new HttpEntity<String>(headers);
+    HttpEntity<Materias> request = new HttpEntity<Materias>(headers);
     ResponseEntity<Materias> response = getRestTemplate().exchange(
         RestWSClientConstants.API_HEROKUAPP + RestWSClientConstants.RESOURCE_MATERIAS,
         HttpMethod.GET, request, Materias.class);
-
+    
+    System.out.print(response.getBody());
     return response.getBody();
   }
 

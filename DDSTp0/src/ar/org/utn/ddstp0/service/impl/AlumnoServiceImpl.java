@@ -2,9 +2,9 @@ package ar.org.utn.ddstp0.service.impl;
 
 import org.uqbar.commons.utils.ApplicationContext;
 import org.uqbar.commons.utils.Observable;
-
 import ar.org.utn.ddstp0.service.AlumnoService;
 import ar.org.utn.ddstp0.ws.dto.Alumno;
+import ar.org.utn.ddstp0.ws.dto.Materias;
 import ar.org.utn.ddstp0.ws.service.impl.AlumnoRestWSClientImpl;
 
 @Observable
@@ -12,8 +12,7 @@ public class AlumnoServiceImpl implements AlumnoService {
 
   private String token;
   private Alumno resultadoAlumno;
-  private String resultadoMaterias;
-
+  private Materias resultadoMaterias;
   private String github_user;
   private String resultadoActualizacion;
 
@@ -36,8 +35,8 @@ public class AlumnoServiceImpl implements AlumnoService {
     return resultadoAlumno;
   }
 
-  public String consultaMaterias() {
-    resultadoMaterias = getWSService().consultaMaterias(this.token).toString();
+  public Materias consultaMaterias() {
+    resultadoMaterias = getWSService().consultaMaterias(this.token);
     return resultadoMaterias;
   }
 
@@ -57,11 +56,11 @@ public class AlumnoServiceImpl implements AlumnoService {
     this.resultadoAlumno = resultadoAlumno;
   }
 
-  public String getResultadoMaterias() {
+  public Materias getResultadoMaterias() {
     return resultadoMaterias;
   }
 
-  public void setResultadoMaterias(String resultadoMaterias) {
+  public void setResultadoMaterias(Materias resultadoMaterias) {
     this.resultadoMaterias = resultadoMaterias;
   }
 

@@ -1,11 +1,15 @@
 package ar.org.utn.ddstp0.ws.dto;
 
+import java.util.List;
+
+import org.uqbar.commons.utils.Observable;
+@Observable
 public class Assignment {
 
   private int id;
   private String title;
   private String description;
-  private Grade[] grades;
+  private List<Grade> grades;
 
   public int getId() {
     return id;
@@ -31,11 +35,11 @@ public class Assignment {
     this.description = description;
   }
 
-  public Grade[] getGrades() {
+  public List<Grade> getGrades() {
     return grades;
   }
 
-  public void setGrades(Grade[] grades) {
+  public void setGrades(List<Grade> grades) {
     this.grades = grades;
   }
 }
