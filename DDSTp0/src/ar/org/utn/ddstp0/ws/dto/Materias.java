@@ -1,8 +1,8 @@
 package ar.org.utn.ddstp0.ws.dto;
 
-import java.util.List;
-
 import org.uqbar.commons.utils.Observable;
+
+import java.util.List;
 
 @Observable
 public class Materias {
@@ -27,11 +27,12 @@ public class Materias {
       stringBuilder.append("Titulo : " + this.assignments.get(i).getTitle() + '\n');
       stringBuilder.append("Descripcion : " + this.assignments.get(i).getDescription() + '\n');
       for (int j = 0; j < this.assignments.get(i).getGrades().size(); j++) {
-        stringBuilder.append("Nota : " + this.assignments.get(i).getGrades().get(j).getValue() + '\n');
-        stringBuilder.append(
-            "Fecha creacion : " + this.assignments.get(i).getGrades().get(j).getCreated_at() + '\n');
-        stringBuilder.append(
-            "Fecha Actualizacion : " + this.assignments.get(i).getGrades().get(j).getUpdated_at() + '\n');
+        stringBuilder
+            .append("Nota : " + this.assignments.get(i).getGrades().get(j).getValue() + '\n');
+        stringBuilder.append("Fecha creacion : "
+            + this.assignments.get(i).getGrades().get(j).getCreated_at() + '\n');
+        stringBuilder.append("Fecha Actualizacion : "
+            + this.assignments.get(i).getGrades().get(j).getUpdated_at() + '\n');
       }
     }
 

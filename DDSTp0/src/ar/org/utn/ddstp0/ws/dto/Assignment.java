@@ -1,8 +1,9 @@
 package ar.org.utn.ddstp0.ws.dto;
 
+import org.uqbar.commons.utils.Observable;
+
 import java.util.List;
 
-import org.uqbar.commons.utils.Observable;
 @Observable
 public class Assignment {
 

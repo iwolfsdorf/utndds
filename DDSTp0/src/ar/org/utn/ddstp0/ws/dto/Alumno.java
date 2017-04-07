@@ -48,11 +48,13 @@ public class Alumno {
   public String toString() {
 
     StringBuilder stringBuilder = new StringBuilder();
-    stringBuilder.append("Code : " + this.code + '\n');
-    stringBuilder.append("First_name : " + this.first_name + '\n');
-    stringBuilder.append("Last_name : " + this.last_name + '\n');
-    stringBuilder.append("Github_user : " + this.github_user + '\n');
 
+    if (this.code != 0) {
+      stringBuilder.append("Code : " + this.code + '\n');
+      stringBuilder.append("First_name : " + this.first_name + '\n');
+      stringBuilder.append("Last_name : " + this.last_name + '\n');
+      stringBuilder.append("Github_user : " + this.github_user + '\n');
+    }
     return stringBuilder.toString();
   }
 }

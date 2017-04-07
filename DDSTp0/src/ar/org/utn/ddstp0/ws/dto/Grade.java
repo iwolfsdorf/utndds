@@ -1,8 +1,9 @@
 package ar.org.utn.ddstp0.ws.dto;
 
+import org.uqbar.commons.utils.Observable;
+
 import java.util.Date;
 
-import org.uqbar.commons.utils.Observable;
 @Observable
 public class Grade {
 
